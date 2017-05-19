@@ -6,13 +6,14 @@ import (
 	"github.com/hashicorp/terraform/terraform"
 )
 
-type homeofficeclient struct {
+type Homeofficeclient struct {
 	ApiKey     string
 	Endpoint   string
 	Timeout    int
 	MaxRetries int
 }
 
+//resource 
 type aws_organization struct {
 	arn string
 	id  int
@@ -22,7 +23,7 @@ func (m *aws_organization) Id() string {
 	return "id-" + m.arn + "!"
 }
 
-func (c *homeofficeclient) Createaws_organization(m *aws_organization) error {
+func (c *Homeofficeclient) Createaws_organization(m *aws_organization) error {
 	return nil
 }
 
@@ -45,6 +46,7 @@ func Provider() terraform.ResourceProvider {
 }
 
 // List of supported configuration fields for aws provider.
+//change this to access aws account
 
 func providerSchema() map[string]*schema.Schema {
 	return map[string]*schema.Schema{
@@ -98,7 +100,7 @@ func providerResources() map[string]*schema.Resource {
 // This is the function used to fetch the configuration params given
 
 func providerConfigure(d *schema.ResourceData) (interface{}, error) {
-	client := homeofficeclient{
+	client := Homeofficeclient{
 		ApiKey:     d.Get("api_key").(string),
 		Endpoint:   d.Get("endpoint").(string),
 		Timeout:    d.Get("timeout").(int),

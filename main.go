@@ -1,16 +1,14 @@
-
-package terraformhoplugin
+package main
 
 import (
-
 	"github.com/hashicorp/terraform/plugin"
+	"github.com/hashicorp/terraform/terraform"
 )
 
-// terraform-provider-aws is the binnary location is recorded
-
 func main() {
-
-	plugin.Serve(new(terraform-provider-aws))
+	plugin.Serve(&plugin.ServeOpts{
+		ProviderFunc: func() terraform.ResourceProvider {
+			return Provider()
+		},
+	})
 }
-
-

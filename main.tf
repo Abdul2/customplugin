@@ -1,5 +1,10 @@
-resource "AWS_Account" "my-server" {
-	
+provider "aws" {
+  profile = "sand-box"
+  region  = "eu-west-1"
+}
 
-	address = "1.2.3.4"
+resource "aws_Account" "hmpo" {
+	
+	Arn = "1.2.3.4"
+	Id = "6778888"
 }

@@ -12,10 +12,24 @@ func resourceServer() *schema.Resource {
 		Delete: resourceServerDelete,
 
 		Schema: map[string]*schema.Schema{
+
 			"address": &schema.Schema{
 				Type:     schema.TypeString,
 				Required: true,
 			},
+
+			"Id": &schema.Schema{
+				Type:     schema.TypeString,
+				Required: true,
+			},
+
+			"Arn": &schema.Schema{
+				Type:     schema.TypeString,
+				Required: true,
+			},
+
+			// Email,JoinedMethod,JoinedTimeStamp,Status
+
 		},
 	}
 

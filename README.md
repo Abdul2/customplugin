@@ -3,7 +3,7 @@
 ### to use
 
  - clone
- - go build -o terraform-provider-example
+ - go build -o terraform-provider-AWS
  - terraform plan
 
    
